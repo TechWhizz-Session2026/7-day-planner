@@ -1,20 +1,10 @@
-import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <>
-      <div>
-        Nabar comming in here
-      </div>
-      <div className="dashboard">
-        <section className="dashboard-nav">
-          <NavLink to="/dashboard/home">Plans Home</NavLink>
-          <NavLink to="/dashboard/new-plans">New Plans</NavLink>
-        </section>
-        <Outlet />
-      </div>
-    </>
+    <div className="dashboard">
+      <Outlet />
+    </div>
   );
 };
 
