@@ -8,6 +8,7 @@ import Home from "./Home";
 import Dashboard from "./Dashboard";
 import PlansHome from "./PlansHome";
 import NewPlans from "./NewPlans";
+import Settings from "./Settings";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,6 +21,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="home" element={<PlansHome />} />
             <Route path="new-plans" element={<NewPlans />} />
+            <Route path="/settings" element={<Settings />} />
           </Route>
         </Routes>
       </BrowserRouter>
