@@ -1,0 +1,336 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #f5f7fb;
+}
+
+.plans-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f5f7fb;
+  padding: 40px 30px;
+}
+
+.plans-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.plans-header {
+  background: linear-gradient(
+        to left,
+        #2672bd 0%,
+        #004E96 100%
+    );
+  color: white;
+  padding: 22px 28px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.plans-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.plans-header p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Search and filters */
+
+.plans-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.search-boxes {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  flex: 1;
+}
+
+.search-boxes span {
+  margin-right: 8px;
+  color: #777;
+  font-size: 20px;
+}
+
+.search-boxes input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.filters select {
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  min-width: 145px;
+}
+
+/* Plans list */
+
+.plans-list {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.plan-row {
+  min-height: 65px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #eee;
+  display: grid;
+  grid-template-columns: 1fr 150px 130px 90px;
+  align-items: center;
+  gap: 15px;
+}
+
+.plan-row:last-child {
+  border-bottom: none;
+}
+
+.plan-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.plan-left input {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+.plan-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.completed .plan-name {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* Priority */
+
+.priority {
+  display: inline-block;
+  width: fit-content;
+  padding: 5px 9px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.priority.high {
+  background: #ffe3e3;
+  color: #d33;
+}
+
+.priority.medium {
+  background: #fff0d5;
+  color: #c47a00;
+}
+
+.priority.low {
+  background: #ddf5e5;
+  color: #23844b;
+}
+
+/* Date */
+
+.due-date {
+  color: #666;
+  font-size: 12px;
+}
+
+/* Buttons */
+
+.plan-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.plan-actions button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.plan-actions button:hover {
+  transform: scale(1.1);
+}
+
+/* Empty state */
+
+.empty-state {
+  background: white;
+  border-radius: 8px;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.empty-state h2 {
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: #777;
+}
+
+/* Modal */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.edit-modal {
+  width: 420px;
+  max-width: 90%;
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.edit-modal h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.edit-modal label {
+  display: block;
+  margin: 13px 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.edit-modal input,
+.edit-modal select {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.modal-buttons button {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #eee;
+}
+
+.save-btn {
+  background: #0878c9;
+  color: white;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .plans-page {
+    padding-left: 250px;
+    padding-right: 20px;
+  }
+
+  .plan-row {
+    grid-template-columns: 1fr 130px 110px 80px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+  .plans-page {
+    padding: 100px 15px 30px;
+  }
+
+  .plans-content {
+    width: 100%;
+  }
+
+  .plans-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .filters {
+    width: 100%;
+  }
+
+  .filters select {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .plan-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .plan-actions {
+    justify-content: flex-end;
+  }
+}
