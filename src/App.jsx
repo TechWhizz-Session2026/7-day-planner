@@ -8,7 +8,6 @@ import PlansHome from "./PlansHome";
 import NewPlans from "./NewPlans";
 import Sidebar from "./Components/Sidebar";
 
-
 function App() {
   const [count, setCount] = useState(0);
 
@@ -24,6 +23,7 @@ function App() {
           <Route path="/dashboard/new-plans" element={<NewPlans />} />
         </Routes>
       </BrowserRouter>
+      
     </>
   );
 }

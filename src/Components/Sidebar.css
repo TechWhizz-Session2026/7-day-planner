@@ -3,12 +3,12 @@
     top: 80px;
     left: 0;
     width: 220px;
-    height: calc(100vh - 80px);
+    height: 80vh;
     background-color: #004E96;
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 50px;
     border-top-right-radius: 16px;
     margin-left: 20px;
 }
@@ -30,7 +30,7 @@
     border-radius: 6px;
     font-size: 16px;
 }
-.sidebar li img{
+.sidebar img{
     width: 20px;
     height: 20px;
     margin-right: 10px;
@@ -41,3 +41,16 @@
     border: 1px solid #ffffff6f;
     border-radius:0;
 }
+#logoutBtn{
+    margin-top: 0;
+    width:85%;
+    height: 40px;
+    background-color:#BB2626;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    bottom: 20px;
+} 
