@@ -1,0 +1,9 @@
+.appshell {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.da-flex {
+    flex: 1;
+}

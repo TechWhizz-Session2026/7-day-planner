@@ -1,9 +1,5 @@
 .the-sidebar {
-	display: flex;
-	flex-direction: column;
-	flex: 0 0 272px;
-	min-height: 80vh;
-	box-sizing: border-box;
-	padding: 24px 16px;
+	height: 95vh;
+    width: 320px;
 	background-color: #046ecf;
 }

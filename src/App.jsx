@@ -5,26 +5,28 @@ import viteLogo from "./assets/vite.svg";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Home";
-import Dashboard from "./Dashboard";
-import PlansHome from "./PlansHome";
-import NewPlans from "./NewPlans";
 import Settings from "./Settings";
+import Sidebar from "./Dummy/Sidebar";
+import Navbar from "./Dummy/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
+      <Navbar />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="home" element={<PlansHome />} />
-            <Route path="new-plans" element={<NewPlans />} />
-            <Route path="/settings" element={<Settings />} />
-          </Route>
-        </Routes>
+      <div className="appshell">
+        <Sidebar />
+        <div className="da-flex">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/settings" element={<Settings />} />
+            </Routes>
+        </div>
+       
+      </div>    
       </BrowserRouter>
+
     </>
   );
 }
