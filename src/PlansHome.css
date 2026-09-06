@@ -1,0 +1,242 @@
+/* plans-home Page */
+
+.plans-home{
+    width: 100%;
+    margin: 0px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.plans-home .top-bar{
+   background: linear-gradient(to right, #004E96, #046ECF);
+   padding: 33px 36px;
+   border-top-left-radius: 16px;
+   border-top-right-radius: 16px;
+   width: 100%;
+   height: 114px;
+}
+
+.plans-home .top-bar .greetings{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.plans-home .top-bar .greetings div{
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.plans-home .top-bar .greetings p{
+    font-size: 14px;
+}
+
+.plans-home .plans-home-content{
+    width: 100%;
+    padding: 33px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.plans-home .plans-home-content .dashboard-stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.plans-home .plans-home-content .dashboard-stats .stats{
+    width: 100%;
+    background: white;
+    height: 130px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 25px;
+}
+
+.plans-home .plans-home-content .dashboard-stats .stats .outer-circle{
+    width: 40px;
+    height: 40px;
+    padding: 12px 8px;
+    background: #046dcf31;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plans-home .plans-home-content .dashboard-stats .stats .inner-circle{
+    width: 13px;
+    height: 13px;
+    background: #004E96;
+    border-radius: 50%;
+}
+
+.plans-home .plans-home-content .dashboard-stats .stats .stat-num{
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.plans-home .plans-home-content .dashboard-stats .stats .stat-text{
+    font-size: 16px;
+    color: #A0A0A0;
+}
+
+.plans-home .plans-home-content .dashboard-reports{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.plans-home .plans-home-content .dashboard-reports .report{
+    width: 100%;
+    background: white;
+    height: inherit;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+}
+
+.report {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.report-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.report-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.priority-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.priority-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priority-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.priority-tasks {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.priority-track {
+  width: 100%;
+  height: 8px;
+  background-color: #f1f5f9;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.priority-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+.dashboard-reports .report .due-date-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.dashboard-reports .report .due-date-row .due-date-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.add-new-plan {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    width: 100%;
+    text-align: center;
+    background-color: #046ECF;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-reports .report .due-date-row .due-date-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f3161;
+    background: #046ECF1A;
+    padding: 5px 10px;
+    border-radius: 14px;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+  .plans-home .plans-home-content .dashboard-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .plans-home {
+    margin: 0px 15px;
+  }
+  
+  .plans-home .plans-home-content .dashboard-reports {
+    grid-template-columns: 1fr;
+  }
+
+  .plans-home .plans-home-content .dashboard-reports .report {
+    height: auto;
+    min-height: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .plans-home {
+    margin: 0px;
+  }
+
+  .plans-home .top-bar {
+    padding: 20px 16px;
+    height: auto;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+
+  .plans-home .plans-home-content {
+    padding: 20px 16px;
+  }
+
+  .plans-home .plans-home-content .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+}
