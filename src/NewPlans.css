@@ -1,0 +1,772 @@
+/* ==========================================================================
+   NewPlans.css - Pixel-Perfect 3-Step Wizard for 7-Day Planner
+   ========================================================================== */
+
+.new-plans-page {
+  flex: 1;
+  min-width: 0;
+  min-height: 100%;
+  background-color: #FFFFFF;
+  padding: 24px 36px 48px 36px;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-y: auto;
+}
+
+.new-plans-card-wrapper {
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Greeting Banner */
+.greeting-banner {
+  background: linear-gradient(135deg, #0059B2 0%, #004D99 100%);
+  border-radius: 16px 16px 0 0;
+  padding: 22px 32px;
+  color: #FFFFFF;
+}
+
+.greeting-title {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: #FFFFFF;
+}
+
+.greeting-sub {
+  margin: 5px 0 0 0;
+  font-size: 13.5px;
+  color: #D1E5FF;
+  font-weight: 400;
+}
+
+/* Wizard Main Card */
+.wizard-card {
+  background-color: #F1F6FE;
+  border-radius: 0 0 16px 16px;
+  padding: 38px 44px 34px 44px;
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+/* Columns */
+.wizard-form-col {
+  flex: 1;
+  max-width: 480px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.wizard-illustration-col {
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.wizard-illustration-img {
+  max-width: 100%;
+  max-height: 290px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 89, 178, 0.06));
+}
+
+/* Headings */
+.wizard-step-heading {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.3px;
+}
+
+.wizard-step-desc {
+  margin: 0 0 22px 0;
+  font-size: 13.5px;
+  color: #334155;
+  line-height: 1.48;
+}
+
+/* Single Input Wrapper (Step 1 & Step 3) */
+.single-input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  margin-bottom: 4px;
+}
+
+.single-text-input {
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  border: 1.5px solid #CBD5E1;
+  background: #FFFFFF;
+  padding: 0 44px 0 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0F172A;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.single-text-input:focus {
+  border-color: #0059B2;
+  box-shadow: 0 0 0 3px rgba(0, 89, 178, 0.12);
+}
+
+.single-text-input::placeholder {
+  font-weight: 400;
+  color: #94A3B8;
+}
+
+.input-clear-icon-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0F172A;
+  color: #FFFFFF;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.input-clear-icon-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Floating Info Cards */
+.floating-info-card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 20px 22px;
+  margin: 18px 0 28px 0;
+  max-width: 430px;
+  box-shadow: 0 10px 26px -4px rgba(0, 89, 178, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  font-size: 13.5px;
+  color: #1E293B;
+  line-height: 1.45;
+  box-sizing: border-box;
+}
+
+/* Navigation Buttons */
+.wizard-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn-wizard-primary {
+  background-color: #00509E;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.btn-wizard-primary:hover:not(:disabled) {
+  background-color: #004385;
+}
+
+.btn-wizard-primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-wizard-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-wizard-back {
+  background: #FFFFFF;
+  color: #475569;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 6px;
+  padding: 8.5px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-wizard-back:hover {
+  background-color: #F8FAFC;
+  border-color: #94A3B8;
+  color: #0F172A;
+}
+
+/* Step Indicator */
+.step-indicator-tag {
+  position: absolute;
+  bottom: 24px;
+  right: 36px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F172A;
+  letter-spacing: -0.2px;
+}
+
+/* ==========================================================================
+   STEP 2: Segmented Inputs, Custom Dropdowns & Added Plans
+   ========================================================================== */
+
+.step2-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 430px;
+  margin-bottom: 14px;
+}
+
+.step2-plan-tag {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.step2-add-new-btn {
+  background: #FFFFFF;
+  border: 1.5px solid #0052A3;
+  color: #0052A3;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.step2-add-new-btn:hover {
+  background-color: #0052A3;
+  color: #FFFFFF;
+}
+
+/* Segmented Inputs Container */
+.step2-segmented-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 430px;
+  margin-bottom: 16px;
+}
+
+.segmented-input-row {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  border: 1.5px solid #CBD5E1;
+  background: #FFFFFF;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.segmented-input-row:focus-within {
+  border-color: #0059B2;
+}
+
+.seg-label-box {
+  width: 92px;
+  flex-shrink: 0;
+  background: #F8FAFC;
+  border-right: 1.5px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #475569;
+  border-radius: 6.5px 0 0 6.5px;
+}
+
+.seg-field-box {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  background: #FFFFFF;
+  border-radius: 0 6.5px 6.5px 0;
+  position: relative;
+}
+
+.seg-text-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0F172A;
+  background: transparent;
+  font-family: inherit;
+}
+
+.seg-text-input::placeholder {
+  font-weight: 400;
+  color: #94A3B8;
+}
+
+.seg-dropdown-trigger {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.seg-dropdown-placeholder {
+  font-weight: 400;
+  color: #94A3B8;
+}
+
+.seg-chevron-icon {
+  color: #0F172A;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.seg-chevron-icon.open {
+  transform: rotate(180deg);
+}
+
+/* Custom Priority Popover */
+.priority-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: #252D37;
+  border-radius: 8px;
+  z-index: 80;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  padding: 6px 0;
+}
+
+.priority-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.priority-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.priority-dropdown-item:hover {
+  background-color: #323C48;
+}
+
+.priority-radio-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #94A3B8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.priority-radio-circle.selected {
+  border-color: #38BDF8;
+}
+
+.priority-radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #38BDF8;
+}
+
+/* Custom Due Date Calendar Popover */
+.due-date-calendar-popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 320px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+  border: 1px solid #E2E8F0;
+  z-index: 80;
+  box-sizing: border-box;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.calendar-month-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F172A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.calendar-arrows {
+  display: flex;
+  gap: 6px;
+}
+
+.calendar-nav-btn {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #475569;
+  transition: all 0.12s ease;
+}
+
+.calendar-nav-btn:hover {
+  background-color: #E2E8F0;
+  color: #0F172A;
+}
+
+.calendar-weekdays-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #94A3B8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.calendar-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.calendar-day-cell {
+  height: 34px;
+  width: 34px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1E293B;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+  border: none;
+  background: transparent;
+}
+
+.calendar-day-cell:hover:not(.active) {
+  background-color: #EFF6FF;
+  color: #00509E;
+}
+
+.calendar-day-cell.active {
+  background-color: #0052A3;
+  color: #FFFFFF;
+}
+
+/* Added Plans List (Step 2) */
+.added-plans-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 430px;
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+
+.added-plan-item-card {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  border: 1.5px solid #CBD5E1;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: border-color 0.15s, transform 0.1s;
+}
+
+.added-plan-item-card:hover {
+  border-color: #94A3B8;
+}
+
+.added-plan-label-box {
+  width: 92px;
+  flex-shrink: 0;
+  background: #F8FAFC;
+  border-right: 1.5px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.added-plan-details-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+}
+
+.added-plan-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0F172A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.added-plan-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.added-plan-priority-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.badge-high {
+  background-color: #FEE2E2;
+  color: #B91C1C;
+}
+
+.badge-medium {
+  background-color: #FEF3C7;
+  color: #B45309;
+}
+
+.badge-low {
+  background-color: #E0E7FF;
+  color: #4338CA;
+}
+
+.btn-remove-plan {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.btn-remove-plan:hover {
+  color: #EF4444;
+  background-color: #FEE2E2;
+}
+
+/* ==========================================================================
+   STEP 3: Personal Time & Suggest For Me
+   ========================================================================== */
+
+.btn-suggest-pill {
+  background-color: #00509E;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 16px 0;
+  align-self: flex-start;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.btn-suggest-pill:hover {
+  background-color: #003F7E;
+  transform: translateY(-1px);
+}
+
+.btn-suggest-pill:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Success Generation Banner / Modal
+   ========================================================================== */
+
+.generation-success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.generation-success-modal {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: modalScaleIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.success-icon-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ECFDF5;
+  color: #10B981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+  font-size: 28px;
+}
+
+.success-modal-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 8px 0;
+}
+
+.success-modal-desc {
+  font-size: 14px;
+  color: #64748B;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.success-plan-summary {
+  background: #F8FAFC;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  padding: 16px;
+  text-align: left;
+  margin-bottom: 24px;
+  font-size: 13.5px;
+}
+
+.success-summary-item {
+  margin-bottom: 8px;
+}
+
+.success-summary-item:last-child {
+  margin-bottom: 0;
+}
+
+.success-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-secondary {
+  background: #F1F5F9;
+  color: #334155;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #E2E8F0;
+}
