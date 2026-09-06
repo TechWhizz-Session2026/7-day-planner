@@ -238,9 +238,13 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .body{
+    width: 100%;
+  }
   .profile-page {
     padding: 16px;
     width: 100%;
+    flex-wrap: wrap;
   }
 
   .profile-card {
