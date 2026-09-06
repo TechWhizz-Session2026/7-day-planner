@@ -11,6 +11,7 @@ const Dashboard = () => {
         <section className="dashboard-nav">
           <NavLink to="/dashboard/home">Plans Home</NavLink>
           <NavLink to="/dashboard/new-plans">New Plans</NavLink>
+          <NavLink to="/dashboard/profile">Profile</NavLink>
         </section>
         <Outlet />
       </div>
