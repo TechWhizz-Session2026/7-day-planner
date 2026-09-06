@@ -240,6 +240,7 @@
 @media (max-width: 768px) {
   .profile-page {
     padding: 16px;
+    width: 100%;
   }
 
   .profile-card {
