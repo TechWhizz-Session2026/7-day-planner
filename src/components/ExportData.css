@@ -1,0 +1,51 @@
+.everything {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.export-card {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-div {
+    color: black;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px 10px 25px;
+}
+
+.yes {
+    background-color: red;
+    color: white;
+}
+
+.no {
+    background-color: blue;
+    color: white;
+}

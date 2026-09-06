@@ -1,0 +1,67 @@
+.everything {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.dangermodebox {
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thex {
+    color: red;
+    font-weight: 900;
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+.buttonx {
+    color: white;
+    padding: 10px 15px 10px 15px;
+    background-color: red;
+    border: none;
+    border-radius: 10px ;
+}
+
+.text{
+    color: red;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.text-bottom {
+    color: red;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.confirmbutton {
+    background-color: red;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    font-size: 10px;
+    padding: 15px 10px 15px 10px;
+}

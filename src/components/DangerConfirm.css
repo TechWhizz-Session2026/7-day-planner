@@ -1,0 +1,57 @@
+.everything {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.danger-box {
+    background-color: white;
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.213);
+    box-shadow: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.yes-button {
+    background-color: red;
+    color: white;
+    padding: 15px 20px 15px 20px;
+    border: 1px solid white;
+    transform: perspective(750px) rotateX(18deg);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 60px 123px -25px;
+    border-radius: 10px;
+
+}
+
+.cancel {
+    background-color: white;
+    color: black;
+    padding: 15px 20px 15px 20px;
+    border: 1px solid rgb(221, 219, 219);
+    border-radius: 10px;
+}

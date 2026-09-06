@@ -1,13 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import DangerConfirm from "./components/DangerConfirm"
+import ChangePass from "./components/ChangePass"
+import ExportData from "./components/ExportData";
 import "./Settings.css";
 
 const Settings = () => {
-  const [notifications, setNotifications] = useState({
-    dueDate: true,
-    weeklySummary: true,
-    announcements: false,
+   let notifs = "notificationschange";
+   const [showDanger, setShowDanger] = useState(false);
+   const [changePassy, setChangePass] = useState(false);
+   const [exportData, setExportData] = useState(false);
+   const [accountDeleted, setAccountDeleted] = useState(false);
+
+   function exportDataTrue() {
+    setExportData(true);
+   }
+
+  function changePassword() {
+    setChangePass(true)
+  }
+
+
+  function ShowDangerTrue() {
+    setShowDanger(true);
+  }
+
+  const [notifications, setNotifications] = useState(() => {
+    let notifCheck = localStorage.getItem("notificationschange");
+
+    if(notifCheck == null) {
+    return{dueDate: true, weeklySummary: true, announcements: false};
+    }else{
+      return JSON.parse(notifCheck);
+    }
   });
-  const [theme, setTheme] = useState("light");
+
+
+  const [theme, setTheme] = useState(() => {
+    let themeCheck = localStorage.getItem("themeschange");
+
+    if(themeCheck == null) {
+      return "light";
+    }else{
+      return JSON.parse(themeCheck);
+    }
+  });
+
+  
 
   const toggleNotification = (name) => {
     setNotifications((current) => ({
@@ -33,9 +71,30 @@ const Settings = () => {
       description: "Occasional product updates",
     },
   ];
+ 
+  useEffect(() => {
+    let newNotif = JSON.stringify(notifications);
+    localStorage.setItem(notifs, newNotif)
+  },[notifications])
+
+
+  let themes = "themeschange";
+  useEffect(() =>{
+    let newTheme = JSON.stringify(theme);
+    localStorage.setItem(themes, newTheme);
+  },[theme] )
+
+
+
 
   return (
     <div className="the-settings">
+      {accountDeleted ? (
+        <div>
+          <h1>your account has been deleted</h1>
+        </div>
+      ) :(
+      <>
       <div className="settings-nav">
         <h1 className="nav-header">Settings</h1>
         <p className="nav-para">Manage notifications, appearance and your account</p>
@@ -94,19 +153,25 @@ const Settings = () => {
         <div className="settings-column">
           <section className="settings-card account-card">
             <h2>Account</h2>
-            <button className="outline-action" type="button">Change Password</button>
-            <button className="outline-action" type="button">Export My Data</button>
+            <button onClick = {changePassword} className="outline-action" type="button">Change Password</button>
+            <button onClick = {exportDataTrue} className="outline-action" type="button">Export My Data</button>
           </section>
 
           <section className="settings-card danger-card">
             <h2>Danger Zone</h2>
             <p>This cannot be undone.</p>
-            <button className="danger-action" type="button">Clear All Plans</button>
+            <button onClick = {ShowDangerTrue} className="danger-action" type="button">Clear All Plans</button>
           </section>
         </div>
       </div>
+      {showDanger && <DangerConfirm onCancel={ () => setShowDanger(false)} onConfirm={ () => setAccountDeleted(true)}/> }
+      {changePassy && < ChangePass onClose={() => setChangePass(false)} />}
+      {exportData && <ExportData onClose={() => {setExportData(false)}} onYes={() => {console.log("hi wsp broski"), setExportData(false)}}/>}
+          </> 
+           )}
     </div>
-  );
+            
+  ) 
 };
 
 export default Settings;
